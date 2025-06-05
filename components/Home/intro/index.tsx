@@ -15,7 +15,6 @@ export default function Intro() {
         }
     };
 
-    const customRed = '#FF5252';
     const customRedGlow = `0px 0px 15px rgba(179, 9, 9, 0.7)`;
 
     return (

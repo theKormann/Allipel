@@ -15,8 +15,8 @@ import { Separator } from "@/components/ui/separator";
 
 export function HeaderMain() {
     const [activeSection, setActiveSection] = useState("home");
-    const [scrolled, setScrolled] = useState(false);
-    const [scrollDirection, setScrollDirection] = useState<"up" | "down" | null>(null);
+    const [, setScrolled] = useState(false);
+    const [, setScrollDirection] = useState<"up" | "down" | null>(null);
     const [sheetOpen, setSheetOpen] = useState(false);
     const [showNavItems, setShowNavItems] = useState(true);
     const lastScrollY = useRef(0);

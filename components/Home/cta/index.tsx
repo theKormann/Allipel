@@ -2,7 +2,6 @@
 import React from 'react'
 import { useRouter } from 'next/navigation'
 import { Button } from '@/components/ui/button'
-import { SectionTitle } from '@/components/ui/SectionTitle'
 
 export function Cta() {
   const router = useRouter()
@@ -16,19 +15,17 @@ export function Cta() {
         className="relative flex max-w-6xl flex-col items-start gap-4 rounded-2xl border border-neutral-800/50
         bg-[url('/images/bg.png')] bg-cover bg-center p-6 sm:gap-5 sm:p-12 md:gap-7 md:p-16 lg:p-24"
       >
-        {/* Iluminação sutil */}
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="bg-base h-2/3 w-2/3 rounded-full opacity-5 blur-3xl"></div>
         </div>
 
-        {/* Conteúdo textual */}
         <div className="relative z-10 max-w-2xl text-left">
           <p className="mb-2 text-sm font-semibold uppercase text-white">
             Entre em contato
           </p>
 
           <h2 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
-            ALLIPEL
+            Allipel
           </h2>
 
           <p className="mt-2 text-base text-white sm:text-lg">

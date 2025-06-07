@@ -1,107 +1,50 @@
-'use client';
-import React from 'react';
-import { SectionTitle } from "@/components/ui/SectionTitle";
-import { SectionDescription } from "@/components/ui/SectionDescription";
-import { Card, CardHeader, CardTitle, CardContent, CardDescription } from '@/components/ui/card';
-import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
-import { MdOutlineLocalGroceryStore, MdOutlineShoppingCartCheckout, MdOutlineLocalOffer } from 'react-icons/md';
-import { TbTruckDelivery } from 'react-icons/tb';
+'use client'
+import React from 'react'
+import { useRouter } from 'next/navigation'
+import { Button } from '@/components/ui/button'
+import { SectionTitle } from '@/components/ui/SectionTitle'
 
-const containerVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      staggerChildren: 0.2,
-      duration: 0.6,
-      ease: "easeOut"
-    }
-  }
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
-};
-
-const marketServices = [
-  {
-    title: "Variedade Incrível",
-    description: "De frescos à despensa, encontre tudo que seu lar precisa em nosso catálogo completo.",
-    icon: <MdOutlineLocalGroceryStore size={28} className="text-red-500" />,
-  },
-  {
-    title: "Compra Fácil e Rápida",
-    description: "Navegue, clique e receba. Sua compra online feita em minutos, sem complicações.",
-    icon: <MdOutlineShoppingCartCheckout size={28} className="text-red-500" />,
-  },
-  {
-    title: "Entrega Expressa",
-    description: "Seus pedidos chegam voando! Agilidade e cuidado da nossa loja até sua porta.",
-    icon: <TbTruckDelivery size={28} className="text-red-500" />,
-  },
-  {
-    title: "Ofertas Imperdíveis",
-    description: "Economize todos os dias com promoções exclusivas e preços que cabem no seu bolso.",
-    icon: <MdOutlineLocalOffer size={28} className="text-red-500" />,
-  },
-];
-
-export default function HomePage() {
-  const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true });
+export function Cta() {
+  const router = useRouter()
 
   return (
     <section
-      ref={sectionRef}
-      id="market-features"
-      className="px-4 py-12 sm:px-6 sm:py-16 md:px-8 md:py-24 bg-black" 
+      id="contact"
+      className="px-4 py-12 sm:px-6 sm:py-16 md:px-8 md:py-24"
     >
+      <div
+        className="relative flex max-w-6xl flex-col items-start gap-4 rounded-2xl border border-neutral-800/50
+        bg-[url('/images/bg.png')] bg-cover bg-center p-6 sm:gap-5 sm:p-12 md:gap-7 md:p-16 lg:p-24"
+      >
+        {/* Iluminação sutil */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="bg-base h-2/3 w-2/3 rounded-full opacity-5 blur-3xl"></div>
+        </div>
 
-      <SectionTitle
-      className='mb-4 text-center'>
-        <span className="text-white font-bold">Seu Mercado </span>
-        <span className="bg-gradient-to-r from-red-500 to-red-700 bg-clip-text text-transparent font-bold">
-          Completo e Ágil
-        </span>
-      </SectionTitle>
-      <div className="text-center">
-        <SectionDescription>
-          <span className="text-neutral-300">Tudo o que você precisa, com a facilidade da compra online</span>{" "}
-          e a rapidez da nossa entrega.
-        </SectionDescription>
+        {/* Conteúdo textual */}
+        <div className="relative z-10 max-w-2xl text-left">
+          <p className="mb-2 text-sm font-semibold uppercase text-white">
+            Entre em contato
+          </p>
+
+          <h2 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
+            ALLIPEL
+          </h2>
+
+          <p className="mt-2 text-base text-white sm:text-lg">
+            Esclareça dúvidas e encontre o que precisa
+          </p>
+
+          <Button
+            onClick={() => router.push('/form')}
+            variant="default"
+            size="lg"
+            className="cursor-pointer mt-6 rounded-full bg-black text-white hover:bg-neutral-800"
+          >
+            💬 Contate-nos
+          </Button>
+        </div>
       </div>
-
-      <div className="container mx-auto px-4 md:px-6 mt-12">
-
-        <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-        >
-          {marketServices.map((service, index) => (
-            <motion.div key={index} variants={itemVariants}>
-              <Card className="h-full bg-transparent border border-neutral-700/80 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:border-red-500/70 hover:shadow-[0_0_25px_0px_rgba(239,68,68,0.15)]">
-                <CardHeader className="flex flex-col items-center text-center gap-4 pb-3 pt-6">
-                  <div className="rounded-full bg-neutral-800/60 p-4 border border-neutral-700/50">
-                    {service.icon}
-                  </div>
-                  <CardTitle className="text-lg font-semibold text-neutral-50">{service.title}</CardTitle>
-                </CardHeader>
-                <CardContent className="text-center pb-6">
-                  <CardDescription className="text-sm text-neutral-400">
-                    {service.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
-        </motion.div>
-      </div>
-
     </section>
-  );
+  )
 }

@@ -19,6 +19,7 @@ export default function Intro() {
 
     return (
         <motion.div
+            id='home'
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeInOut" }}
@@ -31,7 +32,8 @@ export default function Intro() {
                 muted
                 playsInline
                 preload="auto"
-                className="absolute top-0 left-0 w-full h-full object-cover z-0"
+                className="absolute top-0 left-0 w-full h-full object-cover z-0
+                           sm:object-cover md:object-cover"
             >
                 <source src="/video/videoHero.mp4" type="video/mp4" />
                 Seu navegador não suporta a tag de vídeo.
@@ -43,17 +45,17 @@ export default function Intro() {
                     whileTap={{ scale: 0.95 }}
                     transition={{ type: "spring", stiffness: 400, damping: 17 }}
                 >   
-                <a href="#hero">
-                    <Button
-                        onClick={scrollToNextSection}
-                        variant="ghost"
-                        size="icon"
-                        aria-label="Scroll para a próxima seção"
-                        className="cursor-pointer rounded-full bg-[rgba(255,82,82,0.8)] hover:bg-[rgba(255,82,82,1)] text-white"
-                    >
-                        <ChevronDown className="w-8 h-8" />
-                    </Button>
-                </a>
+                    <a href="#hero">
+                        <Button
+                            onClick={scrollToNextSection}
+                            variant="ghost"
+                            size="icon"
+                            aria-label="Scroll para a próxima seção"
+                            className="cursor-pointer rounded-full bg-[rgba(255,82,82,0.8)] hover:bg-[rgba(255,82,82,1)] text-white"
+                        >
+                            <ChevronDown className="w-8 h-8" />
+                        </Button>
+                    </a>
                 </motion.div>
             </div>
         </motion.div>

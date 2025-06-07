@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect, useRef } from "react";
-import { NavBar } from "@/components/NavBar";
 import Image from "next/image";
 import { Text, X } from "lucide-react";
 import {
@@ -22,13 +21,19 @@ export function HeaderMain() {
     const lastScrollY = useRef(0);
     const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
+    const sectionLabels: Record<string, string> = {
+        home: "Início",
+        about: "Sobre",
+        services: "Serviços",
+        location: "Localização",
+    };
+
     useEffect(() => {
         const handleScroll = () => {
             const currentScrollY = window.scrollY;
             const isScrolled = currentScrollY > 50;
             setScrolled(isScrolled);
 
-            // Determine scroll direction with threshold
             if (currentScrollY > lastScrollY.current + 10 && currentScrollY > 100) {
                 setScrollDirection("down");
                 setShowNavItems(false);
@@ -39,8 +44,7 @@ export function HeaderMain() {
 
             lastScrollY.current = currentScrollY;
 
-            // Active section detection
-            const sections = ["home", "about", "services", "contact"];
+            const sections = ["home", "about", "services", "location"];
             for (const section of sections) {
                 const element = document.getElementById(section);
                 if (element) {
@@ -53,12 +57,10 @@ export function HeaderMain() {
                 }
             }
 
-            // Reset to full header if at top
             if (currentScrollY <= 0) {
                 setShowNavItems(true);
             }
 
-            // Clear any existing timeout
             if (timeoutRef.current) {
                 clearTimeout(timeoutRef.current);
             }
@@ -80,7 +82,7 @@ export function HeaderMain() {
                         md:shadow-md md:shadow-zinc-800/30 md:backdrop-blur-xl 
                         px-6 py-2 w-full max-w-lg`} 
                 >
-                    {/* Logo container - centralizado quando nav items estão ocultos */}
+
                     <div className={`flex-shrink-0 transition-all duration-300 ease-out ${
                         !showNavItems ? "absolute left-1/2 transform -translate-x-1/2" : ""
                     }`}>
@@ -91,13 +93,15 @@ export function HeaderMain() {
                                 height: !showNavItems ? "60px" : "50px",
                             }}
                         >
-                            <Image
-                                src="/images/logo.png"
-                                alt="Allipel Logo"
-                                fill
-                                className="object-contain transition-all duration-300 ease-out"
-                                priority
-                            />
+                            <a href="#">
+                                <Image
+                                    src="/images/logo.png"
+                                    alt="Allipel Logo"
+                                    fill
+                                    className="object-contain transition-all duration-300 ease-out"
+                                    priority
+                                />
+                            </a>
                         </div>
                     </div>
 
@@ -105,22 +109,33 @@ export function HeaderMain() {
                         className={`flex-1 flex items-center justify-end gap-4 transition-all duration-300 ease-out 
                             ${showNavItems ? "opacity-100 visible" : "opacity-0 invisible"}`}
                     >
+                        {/* Menu desktop */}
                         <div className="hidden md:flex items-center gap-4">
-                            <NavBar
-                                activeSection={activeSection}
-                                setActiveSection={setActiveSection}
-                            />
+                            {["home", "about", "services", "location"].map((section) => (
+                                <a
+                                    key={section}
+                                    href={`#${section}`}
+                                    className={`text-sm font-medium transition-opacity duration-300 hover:opacity-100 ${
+                                        activeSection === section ? "text-base" : "text-white opacity-70"
+                                    }`}
+                                    onClick={() => setActiveSection(section)}
+                                >
+                                    {sectionLabels[section]}
+                                </a>
+                            ))}
                         </div>
 
+                        {/* Botão separado "Contato" */}
                         <div className="hidden md:block">
                             <a
                                 href="#contact"
-                                className="bg-base rounded-full px-3 py-2 text-sm font-medium tracking-wide text-white opacity-90 transition-opacity duration-300 hover:opacity-100"
+                                className="bg-red-600 hover:bg-red-700 rounded-full px-4 py-2 text-sm font-semibold tracking-wide text-white shadow-md transition-colors duration-300"
                             >
-                                Solicitar
+                                Contato
                             </a>
                         </div>
 
+                        {/* Menu mobile */}
                         <div className="md:hidden">
                             <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
                                 <SheetTrigger asChild>
@@ -141,15 +156,16 @@ export function HeaderMain() {
                                     </div>
 
                                     <div className="mt-30 flex flex-col px-10 space-y-8">
-                                        {["home", "about", "services", "contact"].map((section) => (
+                                        {["home", "about", "services", "location"].map((section) => (
                                             <SheetClose asChild key={section}>
                                                 <a
                                                     href={`#${section}`}
-                                                    className={`font-medium ${activeSection === section ? "text-base" : "text-white"
-                                                        }`}
+                                                    className={`font-medium ${
+                                                        activeSection === section ? "text-base" : "text-white"
+                                                    }`}
                                                     onClick={() => setActiveSection(section)}
                                                 >
-                                                    {section.charAt(0).toUpperCase() + section.slice(1)}
+                                                    {sectionLabels[section]}
                                                 </a>
                                             </SheetClose>
                                         ))}
@@ -159,9 +175,9 @@ export function HeaderMain() {
                                         <SheetClose asChild>
                                             <a
                                                 href="#contact"
-                                                className="bg-base mt-1 rounded-full py-2.5 text-center text-sm font-medium tracking-wide text-white opacity-90 transition-opacity duration-300 hover:opacity-100"
+                                                className="bg-red-600 hover:bg-red-700 mt-1 rounded-full py-2.5 text-center text-sm font-medium tracking-wide text-white shadow-md transition-colors duration-300"
                                             >
-                                                Solicitar
+                                                Contato
                                             </a>
                                         </SheetClose>
                                     </div>

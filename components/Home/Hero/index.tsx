@@ -14,7 +14,7 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section id="hero"
+    <section id="about"
       className="flex justify-center mt-[100px] w-full py-12 md:py-24 lg:py-32 bg-[#000000] text-white overflow-hidden">
       <div className="container max-w-screen-xl mx-auto px-4 md:px-6 relative">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

@@ -9,7 +9,7 @@ export function Cta() {
   return (
     <section
       id="contact"
-      className="px-4 py-12 sm:px-6 sm:py-16 md:px-8 md:py-24"
+      className="justify-center px-4 py-12 sm:px-6 sm:py-16 md:px-8 md:py-24"
     >
       <div
         className="relative flex max-w-6xl flex-col items-start gap-4 rounded-2xl border border-neutral-800/50

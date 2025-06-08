@@ -30,9 +30,8 @@ export const footerNav: FooterItems[] = [
   {
     title: "Recursos",
     links: [
-      { label: "Metologia", href: "#process" },
-      { label: "Projetos", href: "#projects" },
-      { label: "Casos de Sucesso", href: "#testimonials" },
+      { label: "Metodologia", href: "#process" },
+      { label: "Experiências", href: "#testimonials" },
       { label: "FAQ", href: "#testimonials" },
     ],
   },

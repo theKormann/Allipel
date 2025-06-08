@@ -109,7 +109,7 @@ export function HeaderMain() {
                         className={`flex-1 flex items-center justify-end gap-4 transition-all duration-300 ease-out 
                             ${showNavItems ? "opacity-100 visible" : "opacity-0 invisible"}`}
                     >
-                        {/* Menu desktop */}
+
                         <div className="hidden md:flex items-center gap-4">
                             {["home", "about", "services", "location"].map((section) => (
                                 <a
@@ -125,17 +125,17 @@ export function HeaderMain() {
                             ))}
                         </div>
 
-                        {/* Botão separado "Contato" */}
+
                         <div className="hidden md:block">
                             <a
-                                href="#contact"
+                                href="https://wa.me/5511962295188"
                                 className="bg-red-600 hover:bg-red-700 rounded-full px-4 py-2 text-sm font-semibold tracking-wide text-white shadow-md transition-colors duration-300"
                             >
                                 Contato
                             </a>
                         </div>
 
-                        {/* Menu mobile */}
+
                         <div className="md:hidden">
                             <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
                                 <SheetTrigger asChild>
@@ -174,7 +174,7 @@ export function HeaderMain() {
 
                                         <SheetClose asChild>
                                             <a
-                                                href="#contact"
+                                                href="https://wa.me/5511962295188"
                                                 className="bg-red-600 hover:bg-red-700 mt-1 rounded-full py-2.5 text-center text-sm font-medium tracking-wide text-white shadow-md transition-colors duration-300"
                                             >
                                                 Contato

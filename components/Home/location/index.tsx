@@ -16,23 +16,30 @@ export function Location() {
         </span>
       </SectionTitle>
 
+      {/* Endereço em destaque */}
+      <p className="text-center text-white text-lg font-semibold mb-2">
+        Rua Jaguaré, 203 – Jaguaré, São Paulo – SP, 05344-030
+      </p>
+
       <div className="text-center mb-8 max-w-3xl mx-auto">
         <SectionDescription>
-          Estamos localizados na Rua Jaguaré, 203, em uma região de fácil acesso para melhor atender você. Confira no mapa abaixo e venha conhecer a <span className="text-white font-semibold">Allipel</span>!
+          Estamos localizados em uma região de fácil acesso para melhor atender você. Confira no mapa abaixo e venha conhecer a <span className="text-white font-semibold">Allipel</span>!
         </SectionDescription>
       </div>
 
-      <div className="w-full h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-lg border border-neutral-700 max-w-5xl mx-auto">
-        <iframe
-          title="Mapa Empório Allipel - Jaguaré"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.810235338661!2d-46.74542018447816!3d-23.5390719846938!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce55a5d1a5c6c7%3A0x1d3a3f5f3e9c9a6a!2sR.%20Jaguar%C3%A9%2C%20203%20-%20Jaguar%C3%A9%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2005346-000!5e0!3m2!1spt-BR!2sbr!4v1718488056451!5m2!1spt-BR!2sbr"
-          width="100%"
-          height="100%"
-          style={{ border: 0 }}
-          allowFullScreen={true}
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-        ></iframe>
+      <div className="w-full max-w-5xl mx-auto">
+        <div className="h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-lg border border-neutral-700">
+          <iframe
+            title="Mapa Empório Allipel - Jaguaré"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.810235338661!2d-46.74542018447816!3d-23.5390719846938!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce55a5d1a5c6c7%3A0x1d3a3f5f3e9c9a6a!2sR.%20Jaguar%C3%A9%2C%20203%20-%20Jaguar%C3%A9%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2005346-000!5e0!3m2!1spt-BR!2sbr!4v1718488056451!5m2!1spt-BR!2sbr"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen={true}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
       </div>
     </section>
   );

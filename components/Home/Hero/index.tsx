@@ -15,7 +15,7 @@ export function HeroSection() {
 
   return (
     <section id="about"
-      className="flex justify-center mt-[100px] w-full py-12 md:py-24 lg:py-32 bg-[#000000] text-white overflow-hidden">
+      className="flex justify-center w-full py-12 md:py-24 lg:py-32 bg-[#000000] text-white overflow-hidden">
       <div className="container max-w-screen-xl mx-auto px-4 md:px-6 relative">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -53,13 +53,18 @@ export function HeroSection() {
               animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
               transition={{ duration: 0.5, delay: 0.8 }}
             >
-              <Button className="bg-[#790001] hover:bg-[#790001] text-white">
-                Saiba os nossos Serviços
+              <a href="/mvv">
+              <Button className="cursor-pointer bg-[#790001] hover:bg-[#790001] text-white">
+                Saiba Mais sobre a Allipel	
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
-              <Button variant="outline" className="border-[#5A0004] text-[#FF0000] hover:bg-[#3A0002]">
-                Fale com a gente
+              </a>
+              <a href="wa.me/5511962295188" target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" className="cursor-pointer border-[#5A0004] text-[#FF0000] hover:bg-[#3A0002]">
+                Fale conosco
               </Button>
+              </a>
+
             </motion.div>
 
             <motion.div

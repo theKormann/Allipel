@@ -42,18 +42,18 @@ export default function Intro() {
                     whileHover={{ scale: 1.1, boxShadow: customRedGlow }}
                     whileTap={{ scale: 0.95 }}
                     transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                >   
-                    <a href="#about">
-                        <Button
-                            onClick={scrollToNextSection}
-                            variant="ghost"
-                            size="icon"
-                            aria-label="Scroll para a próxima seção"
-                            className="cursor-pointer rounded-full bg-[rgba(255,82,82,0.8)] hover:bg-[rgba(255,82,82,1)] text-white"
-                        >
+                >
+                    <Button
+                        asChild 
+                        variant="ghost"
+                        size="icon"
+                        aria-label="Scroll para a próxima seção"
+                        className="rounded-full bg-red-500/80 hover:bg-red-500 text-white transition-colors"
+                    >
+                        <a href="#about">
                             <ChevronDown className="w-7 h-7" />
-                        </Button>
-                    </a>
+                        </a>
+                    </Button>
                 </motion.div>
             </div>
         </motion.div>

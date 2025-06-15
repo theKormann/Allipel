@@ -12,27 +12,28 @@ export const footerNav: FooterItems[] = [
   {
     title: "Navegação",
     links: [
-      { label: "Início", href: "#home" },
-      { label: "Sobre", href: "#about" },
-      { label: "Localização", href: "#location" },
-      { label: "Contato", href: "#contact" },
+      { label: "Início", href: "/#home" },
+      { label: "Sobre", href: "/#about" },
+      { label: "Localização", href: "/#location" },
+      { label: "Contato", href: "/#contact" },
+      { label: "Quem Somos", href: "/mvv" },
+      { label: "FAQ", href: "/faq" },
     ],
   },
   {
     title: "Serviços",
     links: [
-      { label: "Variedades", href: "#services" },
-      { label: "Fácil e Ágil", href: "#services" },
-      { label: "Entrega Express", href: "#services" },
-      { label: "Ofertas Imperdíveis", href: "#services" },
+      { label: "Variedades", href: "/#services" },
+      { label: "Fácil e Ágil", href: "/#services" },
+      { label: "Entrega Express", href: "/#services" },
+      { label: "Ofertas Imperdíveis", href: "/#services" },
     ],
   },
   {
     title: "Recursos",
     links: [
-      { label: "Metodologia", href: "#process" },
-      { label: "Experiências", href: "#testimonials" },
-      { label: "FAQ", href: "#testimonials" },
+      { label: "Termos de Uso", href: "/terms/termOfUse" },
+      { label: "Política de Privacidade", href: "/terms/privacyPolicy" },
     ],
   },
   {

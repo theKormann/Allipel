@@ -28,9 +28,10 @@ export function Cta() {
             Allipel
           </h2>
 
-          <p className="mt-2 text-base text-white sm:text-lg">
+          <p className="mt-2 text-base text-white max-w-[150px] sm:max-w-none sm:text-lg">
             Esclareça dúvidas e encontre o que precisa
           </p>
+
 
           <Button
             onClick={() => router.push('/form')}

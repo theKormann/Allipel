@@ -25,7 +25,7 @@ export function HeroSection() {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <div className="inline-block rounded-full bg-[#790001] px-4 py-1 text-sm font-medium text-white">
-                Allipel +25 de anos
+                Allipel, mais de 25 anos
             </div>
 
             <motion.h1
@@ -54,7 +54,7 @@ export function HeroSection() {
               transition={{ duration: 0.5, delay: 0.8 }}
             >
               <Button className="bg-[#790001] hover:bg-[#790001] text-white">
-                Conheça nossos produtos
+                Saiba os nossos Serviços
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
               <Button variant="outline" className="border-[#5A0004] text-[#FF0000] hover:bg-[#3A0002]">

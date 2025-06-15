@@ -33,14 +33,16 @@ export function Cta() {
           </p>
 
 
-          <Button
-            onClick={() => router.push('/form')}
-            variant="default"
-            size="lg"
-            className="cursor-pointer mt-6 rounded-full bg-black text-white hover:bg-neutral-800"
-          >
-            💬 Contate-nos
-          </Button>
+          <a href="https://wa.me/5511962295188" target="_blank" rel="noopener noreferrer">
+            <Button
+              onClick={() => router.push('/form')}
+              variant="default"
+              size="lg"
+              className="cursor-pointer mt-6 rounded-full bg-black text-white hover:bg-neutral-800"
+            >
+              💬 Contate-nos
+            </Button>
+          </a>
         </div>
       </div>
     </section>

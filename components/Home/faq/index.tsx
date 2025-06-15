@@ -118,7 +118,7 @@ export function FaqPage() {
               size="lg"
               className="bg-red-600 hover:bg-red-700 text-white rounded-full px-8 py-4 text-base shadow-lg shadow-red-900/20 transition-transform hover:scale-105"
             >
-              <a href="hhttps://wa.me/5511962295188" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/5511962295188" target="_blank" rel="noopener noreferrer">
                 <MessageCircle className="h-5 w-5 mr-2" />
                 Fale Conosco no WhatsApp
               </a>

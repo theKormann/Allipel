@@ -1,5 +1,7 @@
 'use client';
 
+import Image from 'next/image';
+
 interface IconProps {
   name: keyof typeof iconsMap;
   alt?: string;
@@ -29,9 +31,11 @@ export const Icons = ({
   const src = iconsMap[name];
 
   return (
-    <img
+    <Image
       src={src}
       alt={alt}
+      width={24}
+      height={24}
       className={`invert transition-opacity duration-300 hover:opacity-90 ${className}`}
     />
   );

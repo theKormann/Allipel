@@ -7,7 +7,7 @@ export default function TermsOfUseSection() {
         <>
             <HeaderSimple />
             <main className="mt-20 min-h-screen bg-black text-white px-6 py-16 max-w-4xl mx-auto">
-                <h1 className="text-4xl font-bold mb-4"> Termos de Uso — Allipel</h1>
+                <h1 className="text-4xl font-bold mb-4">Termos de Uso — Allipel</h1>
                 <p className="text-sm text-neutral-400 mb-10">Última atualização: 15/06/2025</p>
 
                 <section className="space-y-8">
@@ -21,7 +21,6 @@ export default function TermsOfUseSection() {
                             <li>Apresentar conteúdos multimídia, inclusive vídeos gerados por inteligência artificial, para fins institucionais e promocionais.</li>
                         </ul>
                     </div>
-
 
                     <div>
                         <h2 className="text-2xl font-semibold mb-2">2. Uso de Conteúdo e Mídia</h2>
@@ -56,7 +55,7 @@ export default function TermsOfUseSection() {
                     <div>
                         <h2 className="text-2xl font-semibold mb-2">6. Contato</h2>
                         <p>
-                            Em caso de dúvidas sobre estes termos, entre em contato com a equipe da Allipel pelo botão "Contato" presente no topo do site ou diretamente via WhatsApp.
+                            Em caso de dúvidas sobre estes termos, entre em contato com a equipe da Allipel pelo botão &quot;Contato&quot; presente no topo do site ou diretamente via WhatsApp.
                         </p>
                     </div>
                 </section>

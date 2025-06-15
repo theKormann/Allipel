@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link"; 
 import { Text, X } from "lucide-react";
 import {
   Sheet,
@@ -46,10 +47,11 @@ export function HeaderSimple() {
           md:border md:border-neutral-700/50 md:bg-neutral-950/30 md:shadow-md md:shadow-zinc-800/30 
           md:backdrop-blur-xl transition-all duration-300 ease-out"
         >
+          {/* Logo */}
           <div className="flex-shrink-0">
-            <a href="/">
+            <Link href="/">
               <div
-                className="relative transition-all"
+                className="relative transition-all cursor-pointer"
                 style={{
                   width: showNavItems ? "80px" : "100px",
                   height: showNavItems ? "50px" : "60px",
@@ -63,20 +65,21 @@ export function HeaderSimple() {
                   priority
                 />
               </div>
-            </a>
+            </Link>
           </div>
 
+          {/* Menu desktop */}
           <div
             className={`hidden md:flex flex-1 justify-center transition-opacity duration-300 ${
               showNavItems ? "opacity-100 visible" : "opacity-0 invisible"
             }`}
           >
-            <a
+            <Link
               href="/"
               className="text-sm font-medium text-white/70 hover:text-white transition-colors"
             >
               Início
-            </a>
+            </Link>
           </div>
 
           <div
@@ -114,12 +117,12 @@ export function HeaderSimple() {
 
                   <div className="mt-20 flex flex-col px-10 space-y-8">
                     <SheetClose asChild>
-                      <a
+                      <Link
                         href="/"
                         className="font-medium text-white/80 hover:text-white"
                       >
                         Início
-                      </a>
+                      </Link>
                     </SheetClose>
 
                     <Separator className="bg-gradient-to-r from-neutral-800/10 via-neutral-800 to-neutral-800/10" />

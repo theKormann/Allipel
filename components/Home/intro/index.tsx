@@ -5,15 +5,6 @@ import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 
 export default function Intro() {
-    const scrollToNextSection = () => {
-        const nextSection = document.getElementById('next-section');
-        if (nextSection) {
-            nextSection.scrollIntoView({ behavior: 'smooth' });
-        } else {
-            console.warn("Elemento com id 'next-section' não encontrado para scroll.");
-        }
-    };
-
     const customRedGlow = `0px 0px 15px rgba(179, 9, 9, 0.7)`;
 
     return (

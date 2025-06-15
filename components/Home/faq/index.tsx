@@ -82,7 +82,7 @@ export function FaqPage() {
             </FaqItem>
 
             <FaqItem value="item-5" question="Qual o horário de funcionamento?">
-              Nosso horário de atendimento é de Segunda a Sábado, das 8h às 18h.
+              Nosso horário de atendimento é de Segunda a Sábado, das 7:30 às 18:30.
               Não abrimos aos domingos e feriados.
             </FaqItem>
 

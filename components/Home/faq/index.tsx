@@ -9,9 +9,19 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
-import { MessageCircle } from 'lucide-react';
+import { MessageCircle, Clock, CalendarDays } from 'lucide-react'; // Adicionei Clock e CalendarDays
 
-// Um componente de item de FAQ para evitar repetição
+// Componente visual para as linhas de horário
+const ScheduleRow = ({ day, time, isClosed = false, isHoliday = false }: { day: string, time: string, isClosed?: boolean, isHoliday?: boolean }) => (
+  <div className={`flex items-center justify-between p-3 rounded-md ${isHoliday ? 'bg-red-950/20 border border-red-900/30' : 'bg-neutral-800/30'}`}>
+    <div className="flex items-center gap-2">
+      {isHoliday ? <CalendarDays className="w-4 h-4 text-red-400" /> : <Clock className="w-4 h-4 text-neutral-500" />}
+      <span className={isClosed ? 'text-neutral-500' : 'text-neutral-200 font-medium'}>{day}</span>
+    </div>
+    <span className={isClosed ? 'text-red-400 font-medium' : 'text-neutral-300'}>{time}</span>
+  </div>
+);
+
 type FaqItemProps = {
   value: string;
   question: React.ReactNode;
@@ -81,12 +91,33 @@ export function FaqPage() {
               produtos e para quem deseja um atendimento presencial.
             </FaqItem>
 
+            {/* AQUI ESTÁ A MUDANÇA PRINCIPAL */}
             <FaqItem value="item-5" question="Qual o horário de funcionamento?">
-              Nosso horário de atendimento é de Segunda a Sábado, das 7:30 às 18:30.
-              
-              Não abrimos aos domingos.
+              <div className="flex flex-col gap-2 mt-2">
+                <p className="text-sm mb-2 text-neutral-400">Confira nossos horários de atendimento:</p>
+                
+                <ScheduleRow 
+                  day="Segunda a Sexta" 
+                  time="07:00 às 18:50" 
+                />
+                
+                <ScheduleRow 
+                  day="Sábado" 
+                  time="07:30 às 18:00" 
+                />
+                
+                <ScheduleRow 
+                  day="Domingo" 
+                  time="Fechado" 
+                  isClosed={true} 
+                />
 
-              Feriados das 8:00 às 16:00.
+                <ScheduleRow 
+                  day="Feriados" 
+                  time="08:00 às 16:00" 
+                  isHoliday={true}
+                />
+              </div>
             </FaqItem>
 
             <FaqItem

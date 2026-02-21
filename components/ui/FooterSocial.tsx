@@ -12,7 +12,7 @@ const socialLinks: SocialLink[] = [
   },
   {
     name: "whatsapp",
-    href: "https://wa.me/5511916400563", 
+    href: "https://wa.me/5511962295188", 
   },
   {
     name: "mail",

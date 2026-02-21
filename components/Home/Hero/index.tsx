@@ -59,7 +59,7 @@ export function HeroSection() {
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
               </a>
-              <a href="https://wa.me/5511916400563" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/5511962295188" target="_blank" rel="noopener noreferrer">
               <Button variant="outline" className="cursor-pointer border-[#5A0004] text-[#FF0000] hover:bg-[#3A0002]">
                 Fale conosco
               </Button>

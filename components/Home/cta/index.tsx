@@ -33,7 +33,7 @@ export function Cta() {
           </p>
 
 
-          <a href="https://wa.me/5511916400563" target="_blank" rel="noopener noreferrer">
+          <a href="https://wa.me/5511962295188" target="_blank" rel="noopener noreferrer">
             <Button
               onClick={() => router.push('/form')}
               variant="default"

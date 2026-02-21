@@ -128,7 +128,7 @@ export function HeaderMain() {
 
                         <div className="hidden md:block">
                             <a
-                                href="https://wa.me/5511916400563"
+                                href="https://wa.me/5511962295188"
                                 className="bg-red-600 hover:bg-red-700 rounded-full px-4 py-2 text-sm font-semibold tracking-wide text-white shadow-md transition-colors duration-300"
                             >
                                 Contato
@@ -174,7 +174,7 @@ export function HeaderMain() {
 
                                         <SheetClose asChild>
                                             <a
-                                                href="https://wa.me/5511916400563"
+                                                href="https://wa.me/5511962295188"
                                                 className="bg-red-600 hover:bg-red-700 mt-1 rounded-full py-2.5 text-center text-sm font-medium tracking-wide text-white shadow-md transition-colors duration-300"
                                             >
                                                 Contato
